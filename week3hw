@@ -1,0 +1,117 @@
+//week3.js
+
+//1.	Create an array called ages that contains the following values: 3, 9, 23, 64, 2, 8, 28, 93.
+//a.	Programmatically subtract the value of the first element in the array from the value in the last element of the array (do not use numbers to reference the last element, find it programmatically, ages[7] – ages[0] is not allowed). Print the result to the console.
+//b.	Add a new age to your array and repeat the step above to ensure it is dynamic (works for arrays of different lengths).
+//c.	Use a loop to iterate through the array and calculate the average age. Print the result to the console.
+
+let ages= [3, 9, 23, 64, 2, 8, 28, 93];
+let lastNum= ages.pop();
+let firstNum= ages.shift ();
+console.log(lastNum-firstNum);
+
+
+ages.push(17);
+
+console.log(lastNum-firstNum)
+
+let total= ages.reduce(function (acc, curr){
+ 
+    return acc + curr; }) ;
+console.log (total / ages.length);
+
+//2.	Create an array called names that contains the following values: ‘Sam’, ‘Tommy’, ‘Tim’, ‘Sally’, ‘Buck’, ‘Bob’.
+//a.	Use a loop to iterate through the array and calculate the average number of letters per name. Print the result to the console.
+//b.	Use a loop to iterate through the array again and concatenate all the names together, separated by spaces, and print the result to the console.
+
+let names= ["Sam", "Tommy", "Tim", "Sally", "Buck", "Bob"]
+let namesLengths= names.map (function (names){
+    return names.length
+} );
+console.log(namesLengths);
+
+    
+
+//6.	Write a loop to iterate over the nameLengths array and calculate the sum of all the elements in the array. Print the result to the console.
+// let salesTotal = sales.reduce( function (currentSum, currentArrayElement)  {
+//     console.log(currentSum);
+//     console.log(currentArrayElement);
+//     return currentSum + currentArrayElement;
+let nameLengths.reduce( function(currentSum, currentArrayElement) {
+    console.log (currentSum + currentArrayElement);
+}
+
+
+
+
+//7.	Write a function that takes two parameters, word and n, as arguments and returns the word concatenated to itself n number of times. (i.e. if I pass in ‘Hello’ and 3, I would expect the function to return ‘HelloHelloHello’).
+function concateNTimes (word, n) {
+    let concateWord = ''; // holder for the word repeated over and over 
+    for ( let i = 0; i < n; i++ ) {
+        concateWord += word;
+    }
+    return concateWord;
+}
+
+
+//8.	Write a function that takes two parameters, firstName and lastName, and returns a full name (the full name should be the first and the last name separated by a space).
+
+function name (firstName, lastName) {
+    return (firstName + lastName)
+}
+
+
+//9.	Write a function that takes an array of numbers and returns true if the sum of all the numbers in the array is greater than 100.
+
+
+arrayB = [12, 15, 83, 93]
+arrayB.reduce (function (currentSum, currentArrayElement ) {
+    return currentSum + currentArrayElement;
+});
+if (arrayB.reduce > 100); {
+return true;}
+
+
+
+//10.	Write a function that takes an array of numbers and returns the average of all the elements in the array.
+function (a) {
+    arrayB.reduce (currentSum, currentArrayElement) {
+        return currentSum + currentArrayElement
+    } }
+let b= arrayB.length
+console.log( a /b)
+
+
+//11.	Write a function that takes two arrays of numbers and returns true if the average of the elements in the first array is greater than the average of the elements in the second array.
+let array1= [1,2,3,4,5]
+let array2= [4,5,6,7,8]
+let total1= array1.reduce (function (currentSum, currentArrayElement)) {
+    console.log(currentSum);
+    console.log( currentArrayElement);
+    return currentSum + currentArrayElement;});
+let total2=array2.reduce (function (currentSum, currentArrayElement)); {
+    console.log(currentSum);
+    console.log( currentArrayElement);
+    return currentSum + currentArrayElement;});
+if (total1 > total2);
+    return "true"
+
+//12.	Write a function called willBuyDrink that takes a boolean isHotOutside, and a number moneyInPocket, and returns true if it is hot outside and if moneyInPocket is greater than 10.50.
+
+function willBuyDrink (isHotOutside, moneyInPocket){
+    if(isHotOutside= true && moneyInPocket > 10.50);
+    return true
+}
+
+//13.	Create a function of your own that solves a problem. In comments, write what the function does and why you created it.
+let dailyTipsOld10= [131.95, 48.00, 98.00, 124.00]//amount of tips made over 4 shifts at current job
+let dailyTipsWalrus= [78.00, 84.00, 98.00, 89.00]//amount of tips made over 4 shifts at past job
+let slowDaysOld10= dailyTipsOld10.filter(less90);
+function less90 (values) {
+    return values <90;
+}
+let slowDaysWalrus= dailyTipsWalrus.filter(less90);
+function less90 (values) {
+    return values <90;
+}
+console.log(slowDaysOld10, slowDaysWalrus)//will tell me which is more profitable
