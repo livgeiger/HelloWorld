@@ -1,0 +1,133 @@
+//classes: artwork & Materials
+//array(s): pieces of art
+
+class Artwork{
+    constructor (subject, medium) {
+        this.subject= subject;
+        this.medium= medium;
+        }
+}
+
+class Projects{
+    constructor (name){
+        this.name= name;
+        this.artworks= [];
+    }
+    addArtwork (artwork){
+        if (artwork instanceof Artwork) {
+            this.players.push(artwork);
+        } else {
+            throw new Error ('You can only add pieces of art that are in Subject, Medium format.')
+        }
+    }
+}
+
+class Menu{
+    constructor (){
+        this.projects= [];
+        this.selectedTeam= null
+    }
+    start(){
+        let selection = this.showMainMenuOptions();
+        while (selection != 0 ){
+            switch (selection){
+            case '1':
+                this.createProject();
+                break;
+            case '2':
+                this.createArtwork();
+                break;
+            case '3':
+                this.deleteProject();
+                break;
+            case '4':
+                this.displayProjects();
+                break;
+            default:
+                selection = 0;                
+
+        }
+        selection = this.showMainMenuOptions();
+    } 
+}
+    showMainMenuOptions(){
+        return prompt(`
+        0.)exit
+        1.)create project
+        2.)create artwork
+        3.)delete project
+        4.)display all projects
+        `);
+    }
+
+    
+      displayProjects () {
+        let projectsString= '';
+        for (let i=0; i < this.projects.length; i++) {
+            projectsString += i + ')' + this.projects[i].name + '\n';
+        }
+        
+        alert (projectsString);
+    }
+
+    showProjectMenuOptions(projectsinfo) {
+        return prompt( `
+        0) exit
+        1.)create artwork
+        2.)delete artwork
+        ---------------
+        ${projectsInfo}
+        `);
+    }
+
+    createProject() {
+        let name= prompt ("Enter name for new project:");
+        this.projects.push(new Projects (name));
+    }
+
+    viewProject() {
+        let index = prompt('Enter the index of the project you wish to view:');
+        if (index >-1 && index <this.projects.length ) {
+            this.selectedProject= this.projects[index];
+            let description = 'Project Name: ' + this.selectedProject.name + '\n';
+
+
+            for (let i=0; i , this.selectedProject.artworks.length; i++){
+                description += i + ') ' + this.selectedProject.artworks[i].name + '\n';
+    
+            }
+            let selection= this.showProjectMenuOptions(description);
+            switch(selection){
+                case '1':
+                    this.createArtwork();
+                    break;
+                case '2':
+                    this.deleteArtwork();    
+            }
+        }
+    }
+
+    createArtwork(){
+        let subject = prompt('Enter subject for artwork: ');
+        let medium= prompt ('Enter medium for artwork:');
+        this.selectedProject.artworks.push(new Artwork (subject, medium));
+    }
+
+    deleteArtwork(){
+        let index = prompt ('Enter the index of the artwork you wish to delete: ')
+        if (index > -1 && index < this.selectedProject.artworks.length){
+            this.selectedProject.artworks.splice(index, 1);
+        }
+    }
+    
+    deleteProject(){
+        let index= prompt('Enter the index of the project you wish to delete: ');
+        if (index > -1 && index < this.projects.length) {
+            this.projects.splice (index, 1);
+        }
+    }
+
+}
+
+let menu = new Menu();
+menu.start();
