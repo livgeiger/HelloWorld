@@ -1,0 +1,68 @@
+ class Player{
+     constructor (name) {
+         this.name= name;
+         this.score=0;
+         this.hand = [];
+     }
+ }
+
+ class Card {
+     constructor (suit, value) {
+         this.suit= suit;
+         this.value= value;
+     }
+    describe(){
+             return `${this.value} of ${this.suit}`;
+         }
+     }
+ 
+
+ class Deck {
+     constructor() {
+         this.cards = [];
+     }
+     shuffleDeck(){
+         this.cards= this.cards.sort(() => Math.random() - 0.5)
+     }
+ }
+
+ function getPlayers() {
+     const p1 =new Player (prompt ("Player 1- what is your name?"))
+     const p2= new Player (prompt ("Player 2- what is your name?"))
+     return [p1, p2]
+ }
+
+ function createDeck(){
+     const gameDeck= new Deck();
+     const suits = ["Spades", "Diamonds", "Clubs", "Hearts"];
+         for (let suit of suits) {
+             for (let i=0; i <13; i++){
+                 gameDeck.cards.push(createCards(suit, i))
+             }
+         }
+ }
+
+ function createCards(s, v){
+     const card= new Card (s,v);
+     return card;
+ }
+
+ function startGame(){
+     let [ p1, p2] =getPlayers();
+     Deck= createDeck();
+ }
+
+ function playCard(){
+     return this.hand.pop()
+ }
+
+ function incrementScore(){
+     this.score= this.score += 1;
+ }
+
+ function dealCards(){
+   p1.this.hand =this.Deck.splice[0,2,4,6,8,10,12,14,16,18,20,22,24];
+   p2.this.hand =this.Deck.splice[1,3,5,7,9,11,13,15,17,19,21,23,25];
+ }
+
+ console.log(startGame);
