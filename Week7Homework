@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geiger Floral</title>
+</head>
+<body>
+    <h1>Geiger Floral</h1>
+    <a href="about.html">About us.</a><br>
+    <a href="contact.html">Contact Us!</a> <br>
+    <h2>Floral Arrangement Gallery</h2>
+    <img src="https://images.squarespace-cdn.com/content/v1/6136b9e50d074a2b5887fbcd/1631835587625-TCA68ZN4NODPSVQCC5SA/20210916_180714.jpg?format=1000w" style="width:500px; alt="Warm colored bouquet on dark wood table.">
+    <p>Fall Flourish Bouquet</p>
+    <img src="https://images.squarespace-cdn.com/content/v1/6136b9e50d074a2b5887fbcd/1631834424181-D9NCU04XBPHFPVQ09M2J/20210916_180622.jpg?format=750w" style="width:500px; alt="Brightly colored flowers on a dark background.">
+    <p>Baby Boombox</p>
+    <img src="https://images.squarespace-cdn.com/content/v1/6136b9e50d074a2b5887fbcd/1630979981567-QF7I141U0F2PKMX2HHFB/processed_20210821_195052.jpg?format=750w" style="width:500px; alt="Burgandy, pink, and white flowers in the foreground with a summer sky in the background.">
+    <p>My own wedding bouquet.</p>
+    
+</body>
+</html>;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Geiger Floral</title>
+</head>
+<body>
+    <h1>Contact Us</h1>
+    <form>
+        <label>Name</label><br>
+        <input type="Name">
+    </form>
+    <form>
+        <label>Email</label><br>
+        <input type="Email">
+    </form>
+    <form>
+        <label>Phone Number</label><br>
+        <input type="Phone Number">
+    </form>
+    <form>
+        <input type="submit" value="Submit">
+    </form>
+    <a href="about.html">About us.</a>
+    <p><a href="week-7.html">Go back to homepage.</a></p>
+    
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Geiger Floral</title>
+</head>
+<body>
+    <h1>What is Geiger Floral?</h1>
+    <h2>Wooden Sola flowers that will last a lifetime!</h2>
+    These flowers are perfect for:<br>
+    <ul>
+        <li>Weddings</li>
+        <li>Presents</li>
+        <li>Household Arrangments</li>
+    </ul>
+    <h2>Why opt for wooden flowers?</h2>
+    Wooden flowers are made to last! By hand painting each flower, we are able to create blooms that are much more life-like than silk blooms. When properly cared for, these blooms will last indefinitely. This allows you to enjoy your special bouquet or arrangement for years to come! <br> 
+    <h3>As you can see below, with a traditional florist, you often pay the same or more for live flowers, and yet they only last a short time. </h3>
+    <h5>*All prices approximate and may vary.</h5>
+    <table>
+        <caption>Cost of Wedding Flowers</caption>
+        <tr>
+            <th>Type of Arrangement</th>
+            <th>Traditional Florist</th>
+            <th>Wooden Flowers</th>
+        </tr>
+        <tr>
+            <td>Bridal Bouquet</td>
+            <td>$250.00</td>
+            <td>$180.00</td>
+        </tr>
+        <tr>
+            <td>Bridesmaid Bouquet</td>
+            <td>$80.00</td>
+            <td>$75.00</td>
+        </tr>
+        <tr>
+            <td>Boutonniere</td>
+            <td>$25.00</td>
+            <td>$25.00</td>
+        </tr>
+    </table>
+    <a href="contact.html">Contact Us!</a> <br>
+    <a href="week-7.html">Go back to homepage.</a>
+   
+</body>
+</html>
