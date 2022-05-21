@@ -1,0 +1,298 @@
+/*stylesheet*/
+.header {
+    font-size: 100px;
+    font-family:'Oswald', sans-serif; 
+    color:aliceblue;
+    background-image: url(https://images.unsplash.com/photo-1560970117-d572fcd7242b?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=883);
+    height: 500px;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 100%;
+    text-align: bottom center;
+    }
+    
+body{
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(10, 56, 41);
+}
+
+.div-container{
+    display: flex;
+    flex-direction: column;
+}
+
+#image1, #image2, #image3 {
+    height: 600px;
+    width: 800px;
+    border: 2px darkslategrey solid;
+    background-position: center;  
+    background-size: cover;  
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#image1{
+    background-image: url("https://images.squarespace-cdn.com/content/v1/6136b9e50d074a2b5887fbcd/1631835587625-TCA68ZN4NODPSVQCC5SA/20210916_180714.jpg?format=1000w");
+}
+
+#image2{
+background-image: url("https://images.squarespace-cdn.com/content/v1/6136b9e50d074a2b5887fbcd/1631834424181-D9NCU04XBPHFPVQ09M2J/20210916_180622.jpg?format=750w");
+}    
+
+#image3{
+    background-image: url("https://images.squarespace-cdn.com/content/v1/6136b9e50d074a2b5887fbcd/1630979981567-QF7I141U0F2PKMX2HHFB/processed_20210821_195052.jpg?format=750w");
+}
+
+#links a:hover {
+    display: inline-block;
+    padding: 10px;
+    background-color: darkslategray;
+    font-size: 20px;
+    text-decoration: underline;
+    color: aliceblue;
+}
+
+#links a:visited {
+    display: inline-block;
+    padding: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    color: aliceblue;
+}
+
+#links {
+    display: inline-block;
+    padding: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    color: aliceblue;
+}
+
+#contact{
+    padding: 10px;
+    width: 200px;
+}
+
+#cont-page{
+    width: auto;
+    display: flex;
+    justify-content: center;
+    height: 500px;
+    background-image: url(https://images.unsplash.com/photo-1621503779086-4b0b05c2114f?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 200%;
+
+}
+
+#pricing{
+    display: flex;
+    justify-content: center;
+    width: 700px;
+    padding: 30px;
+    background-color: darkslategray;
+}
+
+#pricing-parent{
+    display: flex;
+    justify-content: center;
+}
+
+th, td {
+    border: 1px solid aliceblue;
+}
+
+table {
+    border-collapse: collapse;
+    width: 600px;
+}
+
+thead th {
+    width: 33%;
+}
+
+#about{
+      background-image: url(https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=327);
+      background-repeat: no-repeat;
+      background-size: cover;
+}
+
+#home{
+    display: flex;
+    justify-content: center;
+}
+
+#homepage{
+    background-image: url(https://img.freepik.com/free-photo/close-up-dark-grey-texture_262013-252.jpg?w=900);
+}
+
+/*homepage*/
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geiger Floral</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Smooch&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <h1>Geiger Floral</h1>
+    </div>
+    <div id="homepage">
+        <div id="links">
+            <a href="about.html">About us.</a> 
+            <a href="contact.html">Contact Us!</a>
+        </div>
+    
+        <h2>Floral Arrangement Gallery</h2>
+    
+       <div id="home">
+       
+        <div class="div-container">
+        <div id="image1">
+    
+        </div>
+    
+        <div id="image2">
+    
+        </div>
+        
+        <div id="image3">
+    
+        </div>
+        </div>
+           
+       </div>
+
+    </div>
+
+    
+</body>
+</html>
+
+/*contact*/
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Geiger Floral</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="cont-page">
+        <div id="contact">
+            <h1>Contact Us</h1>
+            <form>
+                <label>Name</label><br>
+                <input type="Name">
+            </form>
+            <form>
+                <label>Email</label><br>
+                <input type="Email">
+            </form>
+            <form>
+                <label>Phone Number</label><br>
+                <input type="Phone Number">
+            </form>
+            <form>
+                <input type="submit" value="Submit">
+            </form>
+            
+        </div>
+    </div>
+   
+
+   
+    <div id="links">
+        <a href="about.html">About us.</a>
+        <p><a href="week-7.html">Go back to homepage.</a></p>
+
+    </div>
+   
+    
+</body>
+</html>
+
+/*aboutpage*/
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Geiger Floral</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+</head>
+<body id="about">
+    <h1>What is Geiger Floral?</h1>
+    <h2>Wooden Sola flowers that will last a lifetime!</h2>
+    These flowers are perfect for:<br>
+    <ul>
+        <li>Weddings</li>
+        <li>Presents</li>
+        <li>Household Arrangments</li>
+    </ul>
+    <h2>Why opt for wooden flowers?</h2>
+    Wooden flowers are made to last! By hand painting each flower, we are able to create blooms that are much more life-like than silk blooms. When properly cared for, these blooms will last indefinitely. This allows you to enjoy your special bouquet or arrangement for years to come! <br> 
+    <h3>As you can see below, with a traditional florist, you often pay the same or more for live flowers, and yet they only last a short time. </h3>
+    <h5>*All prices approximate and may vary.</h5>
+    <div id="pricing-parent">
+        <div id="pricing">
+            <table>
+                <caption>Cost of Wedding Flowers</caption>
+                <tr>
+                    <th>Type of Arrangement</th>
+                    <th>Traditional Florist</th>
+                    <th>Wooden Flowers</th>
+                </tr>
+                <tr>
+                    <td>Bridal Bouquet</td>
+                    <td>$250.00</td>
+                    <td>$180.00</td>
+                </tr>
+                <tr>
+                    <td>Bridesmaid Bouquet</td>
+                    <td>$80.00</td>
+                    <td>$75.00</td>
+                </tr>
+                <tr>
+                    <td>Boutonniere</td>
+                    <td>$25.00</td>
+                    <td>$25.00</td>
+                </tr>
+            </table>
+    
+        </div>
+
+    </div>
+    
+
+    <div id="links">
+        <a href="contact.html">Contact Us!</a> <br>
+        <a href="week-7.html">Go back to homepage.</a>
+    </div>
+    
+   
+</body>
+</html>
