@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+
+</style>
+
+<body>
+<div id="player-turn-heading">
+    <h1>It is player Xs turn.</h1>
+</div>
+    <div class="container-fluid" id="game-board">
+        <div class="row">
+            <div class="box" id="1"></div>
+            <div class="box" id="2"></div>
+            <div class="box" id="3"></div>
+        </div>
+        <div class="row">
+            <div class="box" id="4"></div>
+            <div class="box" id="5"></div>
+            <div class="box" id="6"></div>
+        </div>
+        <div class="row">
+            <div class="box" id="7"></div>
+            <div class="box" id="8"></div>
+            <div class="box" id="9"></div>
+        </div>
+
+
+        <button id="reset-board">RESET BOARD</button>
+
+    </div>
+    <script src="app.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+.box {
+    border: 2px solid black;
+    height: 150px;
+    width: 150px;
+    display: grid;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 50 px;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.container-fluid{
+    padding: 50px;
+align-content: center;
+justify-content: center;
+}
+
+#player-turn-heading{
+    font-size: 50px;
+}
+
+let boxArray = $('box');
+let array = [];
+let turn = true;
+let turnNumber= 1;
+for (let i = 0; i < 9; i++) {
+    let box = $(`#${i + 1}`);
+    box.on('click', () => {
+        if (turn) {
+            box.text('X');
+            $('player-turn-heading').text('It is player Os turn.');//these aren't changing the heading, but I don't know why exactly.
+            turn = false;
+            turnCounter();
+        } else {
+            box.text('O');
+            $('player-turn-heading').text('It is player Xs turn.');//these aren't changing the heading, but I don't know why exactly.
+            turn = true;
+            turnCounter();
+        }
+    })
+}
+
+function turnCounter() {
+    if ( turnNumber < 5 ) {
+        turnNumber++;
+    } else {
+        if ( checkForWin(turnNumber) ) {
+            winner.call();
+        }
+        turnNumber++;
+    }
+}
+
+
+const box1 = $('1');
+const box2 = $('2');
+const box3 = $('3');
+const box4 = $('4');
+const box5 = $('5');
+const box6 = $('6');
+const box7 = $('7');
+const box8 = $('8');
+const box9 = $('9');
+
+
+
+function winner() {//not likely the best way to do an algorithm, but the best I could come up with.
+    if (box1.value == 'X' && box2.value == 'X' && box3.value == 'X') {
+        alert('Player X is the winner!');
+    } else if
+        (box4.value == 'X' && box5.value == 'X' && box6.value == 'X')
+        alert('Player X is the winner!');
+
+    else if
+        (box7.value == 'X' && box8.value == 'X' && box9.value == 'X')
+        alert('Player X is the winner!');
+    else if
+        (box1.value == 'X' && box4.value == 'X' && box7.value == 'X')
+        alert('Player X is the winner!');
+    else if
+        (box2.value == 'X' && box5.value == 'X' && box8.value == 'X')
+        alert('Player X is the winner!');
+    else if
+        (box3.value == 'X' && box6.value == 'X' && box9.value == 'X')
+        alert('Player X is the winner!');
+    else if
+        (box1.value == 'X' && box5.value == 'X' && box9.value == 'X')
+        alert('Player X is the winner!');
+    else if
+        (box3.value == 'X' && box5.value == 'X' && box7.value == 'X')
+        alert('Player X is the winner!');
+    else if
+        (box1.value == 'O' && box2.value == 'O' && box3.value == 'O')
+        alert('Player O is the winner!');
+    else if
+        (box4.value == 'O' && box5.value == 'O' && box6.value == 'O')
+        alert('Player O is the winner!');
+    else if
+        (box7.value == 'O' && box8.value == 'O' && box9.value == 'O')
+        alert('Player O is the winner!');
+    else if
+        (box1.value == 'O' && box4.value == 'O' && box7.value == 'O')
+        alert('Player O is the winner!');
+    else if
+        (box2.value == 'O' && box5.value == 'O' && box8.value == 'O')
+        alert('Player O is the winner!');
+    else if
+        (box3.value == 'O' && box6.value == 'O' && box9.value == 'O')
+        alert('Player O is the winner!');
+    else if
+        (box1.value == 'O' && box5.value == 'O' && box9.value == 'O')
+        alert('Player O is the winner!');
+    else if
+        (box3.value == 'O' && box5.value == 'O' && box7.value == 'O')
+        alert('Player O is the winner!');
+    else {
+        alert('The game is a draw.')
+    }
+}
+    
+
+
+document.getElementById('reset-board').addEventListener('click', () =>
+{
+    box.text=""
+}
+) //in theory, in my head, this should work, but it clearly does not. It doesn't stop the rest of the code from functioning correctly like my other attmepts did, but it doesn't help anything.
