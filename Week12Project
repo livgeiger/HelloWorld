@@ -1,0 +1,185 @@
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body class="container">
+    <div class="jumbotron" id="new-project">
+        <h2>Create a new project</h2>
+        <input type="text" class="form-control" id="new-project-input" placeholder="Enter project name here"> </br>
+        <button class="btn btn-primary form-control" id="new-project-button">Create</button>
+    </div>
+    <div id="app"></div>
+    
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="index.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
+
+JAVASCRIPT
+
+class Project {
+    constructor(name) {
+        this.name = name;
+        this.pieces = [];
+    }
+
+    addPiece(medium, subject) {
+        this.pieces.push(new Pieces(medium, subject));
+    }
+}
+
+class Pieces {
+    constructor(medium, subject) {
+        this.medium = medium;
+        this.subject = subject;
+    }
+}
+
+class ProjectService {
+    static url = 'https://62ab7ddcbd0e5d29af11749f.mockapi.io/pieces ';
+
+    static getAllProjects() {
+        return $.get(this.url);
+    }
+
+    static getProject(id) {
+        return $.get(this.url + `/:$(id)`);
+    }
+
+    static createProject(project) {
+        return $.post(this.url, project);
+    }
+
+    static updateProject(project) {
+        return $.ajax({
+            url: this.url + `/:${project._id}`,
+            dataType: 'json',
+            data: JSON.stringify(project),
+            contentType: 'application/json',
+            type: 'PUT'
+        });
+
+    }
+    static deleteProject(id) {
+        return $.ajax({
+            url: this.url + `/:${id}`,
+            type: 'DELETE'
+        });
+    }
+}
+
+class DOMManager {
+    static projects;
+
+    static getAllProjects() {
+        ProjectService.getAllProjects().then(projects => this.render(projects));
+
+    }
+
+    static deleteProject(id) {
+        ProjectService.deletehouse(id)
+            .then(() => {
+                return ProjectService.getAllProjects();
+            })
+            .then((projects) =>{
+                this.render(projects)});
+    }
+
+    static addPiece(id) {
+        for (let project of this.projects) {
+            if (project._id == id) {
+                project.pieces.push(new Pieces($(`#${project._id}-piece-medium`).val(), $(`#${project._id}-piece-subject`).val()));
+                ProjectService.updateProject(project)
+                    .then(() => {
+                        return ProjectService.getAllProjects();
+                    })
+                    .then((projects) => this.render(projects));
+
+
+            }
+        }
+    }
+
+    static deletePiece(projectId, pieceId){
+        for( let project of this.projects){
+        }
+            if (project._id == projectId){
+                for (let piece of project.piece){
+                    if (piece._id == pieceId)
+                    project.piece.splice(project.pieces.indexOf(piece), 1);
+                    ProjectService.updateProject(project)
+                    .then(() => {
+                        return ProjectService.getAllProjects();
+                    })
+                    .then((projects) => this.render(projects));
+                }
+            }
+        }
+    
+
+    static createProject(name) {
+        ProjectService.createProject(new Project(name))
+            .then(() => {
+                return ProjectService.getAllProjects();
+            })
+            .then((projects) => this.render(projects));
+    }
+
+    static render(projects) {
+        this.projects = projects;
+        $('#app').empty();
+        for (let project of projects) {
+            $('#app').prepend(
+                `<div id="${project._id}" class= "card">
+                    <div class="card-header">
+                     <h2>${project.name}</h2>
+                     <button class= "btn btn-danger" onclick= 'DomManager.delete('${project._id}')'>Delete</button>
+                     </div>
+                     <div class"card-body">
+                       <div class= "card"> 
+                         <div class="row">
+                           <div class= 'col-sm'>
+                             <input type="text" id="${project._id}-piece-subject" class= "form-control" placeholder="Piece Subject">
+                             </div>
+                             <div class= 'col-sm>
+                             <input type="text" id="${project._id}-piece-medium" class= "form-control" placeholder="medium">
+                             </div>
+                             <button id="${project._id}-new-piece"onclick="DOMManger.addPiece('${project._id}')" class="btn btn-primary form-control">Add</button>
+                     </div>
+                     </div>
+                      </div>
+                     </div> 
+            `);
+            // for (let piece of projects.piece) {
+            //     $(`#${Project._id}`).find('.card-body').append(
+            //         `<p>
+            //         <span id= name-${piece._id}><strong> Name:</strong> ${piece.subject}</span>
+            //         <span id= name-${piece._id}><strong> Name:</strong> ${piece.medium}</span>
+            //         <button class= "btn btn-danger" onclick="DOMManager.deletePiece('${project._id}', '${piece._id}')">Delete Piece</button>
+            //         `
+            //     )
+            // }
+        }
+    }
+}
+// $('#new-project-button').addEventListener('click', ()=> {
+//     DOMManager.createProject($('new-project-input').val());
+//     $('#new-project-input').val('');
+// })
+
+document.getElementById('new-project-button').addEventListener('click', () => {
+    DOMManager.createProject($('new-project-input').val());
+    $('#new-project-input').val('');
+})
+
+
+
+DOMManager.getAllProjects(); 
